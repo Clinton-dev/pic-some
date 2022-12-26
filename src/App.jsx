@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import {Switch, Route} from 'react-router-dom'
+
+import Header from './components/Header'
+import Cart from './pages/Cart'
+import Photos from './pages/Photos'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      hello world
+      <Header />
+      <Switch>
+        <Route exact path='/'>
+          <Photos />
+        </Route>
+        <Route path='/cart'>
+          <Cart />
+        </Route>
+      </Switch>
     </div>
   )
 }
+
+// Add routing to cart and photos page
 
 export default App
