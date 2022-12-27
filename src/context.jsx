@@ -27,6 +27,12 @@ function CartContext({children}) {
     function addToCart(item){
         setCart(prevCart => [...prevCart, item])
     }
+    
+
+    function removeFromCart(id) {
+        const filteredCart = cart.filter(item => item.id != id)
+        setCart(filteredCart)
+    }
 
 
     useEffect(() => {
@@ -39,7 +45,7 @@ function CartContext({children}) {
     },[])
 
     return (
-        <Context.Provider value={{photos, toggleIsFavorite, cart, addToCart}}>
+        <Context.Provider value={{photos, toggleIsFavorite, cart, addToCart, removeFromCart}}>
             {children}
         </Context.Provider>
     )

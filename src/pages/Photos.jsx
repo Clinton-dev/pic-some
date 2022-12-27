@@ -7,6 +7,7 @@ import { getClass } from '../utils'
 function Photos() {
 
     const {photos} = useContext(Context)
+
     const allPhotos = photos.map((photo, index) => {
         return(
             <Image key={photo.id} photo={photo} className={getClass(index)}/>
