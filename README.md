@@ -25,12 +25,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./type-speed-game.png)
+![Screenshot from 2022-12-27 23-54-34](https://user-images.githubusercontent.com/30356189/209721514-5a4020c6-4c84-4ab7-abce-d3cd0a506a2f.png)
+![Screenshot from 2022-12-27 23-54-23](https://user-images.githubusercontent.com/30356189/209721531-d288ed3a-7952-417b-9834-f9c2f7ba3734.png)
+
 
 
 ### Links
 
-- Live Site URL: [app url](https://type-speed-game-theta.vercel.app/)
+- Live Site URL: [app url](https://pic-some-ten.vercel.app/)
 
 ## My process
 
