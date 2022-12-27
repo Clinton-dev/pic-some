@@ -1,11 +1,12 @@
 import React, {useState, useContext} from 'react'
 import { Context } from '../context'
+import useHover from '../hooks/useHover'
 
 
 function Image({photo, className}) {
   const {toggleIsFavorite, addToCart, cart, removeFromCart} = useContext(Context)
 
-  const [hovered, setHovered] = useState(false)
+  const [hovered, ref] = useHover()
 
   function heartIcon() {
     if(photo.isFavorite) {
@@ -28,8 +29,7 @@ function Image({photo, className}) {
   return (
     <div
       className={`${className} image-container`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      ref={ref}
       >
         <img src={photo.url} className="image-grid"/>
         {heartIcon()}
