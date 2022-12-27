@@ -3,7 +3,7 @@ import { Context } from '../context'
 
 
 function Image({photo, className}) {
-  const {toggleIsFavorite, addToCart, cart} = useContext(Context)
+  const {toggleIsFavorite, addToCart, cart, removeFromCart} = useContext(Context)
 
   const [hovered, setHovered] = useState(false)
 
@@ -18,11 +18,12 @@ function Image({photo, className}) {
 
   function cartIcon() {
     if(cart.includes(photo)) {
-      return <i className="ri-add-circle-fill cart" ></i>
+      return <i className="ri-add-circle-fill cart" onClick={() => removeFromCart(photo.id)}></i>
     }else if(hovered){
       return <i className="ri-add-circle-line cart" onClick={() => addToCart(photo)}></i>
     }
   }
+
 
   return (
     <div
