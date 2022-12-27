@@ -8,7 +8,9 @@ function Image({photo, className}) {
   const [hovered, setHovered] = useState(false)
 
   function heartIcon() {
-    if(hovered){
+    if(photo.isFavorite) {
+      return <i className="ri-heart-fill favorite" onClick={() => toggleIsFavorite(photo.id)}></i>
+    } else if(hovered){
       return <i className="ri-heart-line favorite" onClick={() => toggleIsFavorite(photo.id)}></i>
     }
   }
