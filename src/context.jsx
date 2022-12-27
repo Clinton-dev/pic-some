@@ -4,6 +4,7 @@ const Context = React.createContext()
 
 function CartContext({children}) {
     const [photos, setPhotos] = useState([])
+    const [cart, setCart] = useState([])
 
 
     function toggleIsFavorite(id) {
@@ -23,6 +24,11 @@ function CartContext({children}) {
     }
 
 
+    function addToCart(item){
+        setCart(prevCart => [...prevCart, item])
+    }
+
+
     useEffect(() => {
         const url = 'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json'
 
@@ -33,7 +39,7 @@ function CartContext({children}) {
     },[])
 
     return (
-        <Context.Provider value={{photos, toggleIsFavorite}}>
+        <Context.Provider value={{photos, toggleIsFavorite, cart, addToCart}}>
             {children}
         </Context.Provider>
     )
